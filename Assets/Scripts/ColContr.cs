@@ -72,35 +72,6 @@ public class ColContr : MonoBehaviour
         }
 
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (other.gameObject.tag == "patron")
-        {
-            other.gameObject.GetComponent<AudioSource>().Play();
-            if (gameObject.tag == "en2")
-            {
-                PlayerControl.Money();
-
-            }
-            Destroy(transform.parent.gameObject);
-            Destroy(other.gameObject);
-
-        }
-        if (other.gameObject.CompareTag("en"))
-        {
-            PlayerControl.Money();
-
-
-            Destroy(transform.parent.gameObject);
-        }
-        if (other.gameObject.tag == "boss")
-        {
-            PlayerControl.Money();
-
-
-            Destroy(transform.parent.gameObject);
-        }
-    }
     private void FixedUpdate()
     {
         if (gameObject.CompareTag("en3") && PlayerControl.konec == false)
